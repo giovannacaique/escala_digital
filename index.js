@@ -33,3 +33,7 @@ app.listen(8080, () => {
 app.get("/", (req, res) => {
     res.render('index');
 });
+
+app.get("/login", (req, res) => {
+    res.render('login');
+});
