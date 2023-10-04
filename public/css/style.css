@@ -1,0 +1,342 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    margin: 0;
+    background-color: #41C1BA;
+ }
+ 
+ main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+ 
+ /*COMEÇO CABEÇAÇHO*/
+ header {
+    text-align: center;
+    background-color: #D9D9D9;
+    width: 100%;
+    margin-bottom: 5%;
+    position: fixed;
+    z-index: 2;
+ }
+ /*COMEÇO DROPDOWN*/
+ .dropdown {
+    float: left;
+    position: relative;
+ }
+ 
+ .menu-button {
+    margin-top: 9%;
+    background-color: #D9D9D9;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+ }
+ 
+ .menu-content {
+    display: none;
+    position: absolute;
+    background-color: #D9D9D9;
+    min-width: 160px;
+    z-index: 1;
+    font-size: large;
+    font-weight: bold;
+ }
+ 
+ .menu-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ 
+ .menu-content a:hover {
+    background-color: #000000;
+    color: #ffff;
+ }
+ 
+ .dropdown:hover .menu-content {
+    display: block;
+ }
+ /*FIM DROPDOWN*/
+ h1 {
+    text-decoration: none;
+    color: black;
+ }
+ .escala {
+    text-decoration: none;
+    color: #000000;
+    font-size: large;
+    font-weight: bold;
+ }
+ 
+ /* Banner Home */
+ .slogan{
+    display: flex;
+    width: 80%;
+    margin-top: 10%;
+ }
+ 
+ .slogan::before{
+    content: "";
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #D9D9D9;
+ }
+ 
+ .slogan h1{
+    text-align: center;
+    color: #000000;
+    text-transform: none;
+    font-size: x-large;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 2rem;
+ }
+ 
+ /* Sessão :: projeto */
+ 
+ #projeto {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: justify;
+    margin-top: 7%;
+ }
+ 
+ /* Estilo para o botão "Comece Agora" */
+ .start-button {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #D9D9D9;
+    color: #000000;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ 
+ .start-button:hover {
+    background-color: #D9D9D9;
+ }
+ 
+ /*OUTROS*/
+ .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+ 
+ }
+ 
+ .feature {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+ }
+ 
+ /* Sessão :: Equipe */
+ #equipe {
+    width: 100%;
+    margin-top: 5%;
+ }
+ 
+ #divExternaEquipe {
+    display: flex;
+    justify-content: center;
+ }
+ 
+ #divInternaEquipe {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+ }
+ 
+ #cards-equipe-titulo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+ }
+ 
+ .card-equipe-titulo {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    color: #000000;
+    margin: 20px;
+    width: 400px;
+    height: 20px;
+ }
+ 
+ .card-equipe-titulo-col1 {
+    width: 40%;
+ }
+ 
+ .card-equipe-titulo-col2 {
+    width: 60%;
+ }
+ 
+ #cards-equipe-descricao {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+ }
+ 
+ .card-equipe-descricao {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px;
+    width: 400px;
+    height: 250px;
+    border-radius: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #000000;
+ }
+ 
+ .imagem-equipe {
+    width:70%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    position: relative;
+    z-index: 1;
+    left: 5%;
+ }
+ 
+ .texto_equipe {
+    color: #000000;
+    font-weight: bold;
+ }
+ 
+ /* CONTATO */
+ .contato {
+    margin-top: 5%;
+ }
+ 
+ .contato_heading {
+    display: grid;
+    justify-items: center;
+    padding-bottom: 3%;
+ }
+ 
+ .contato_group-content {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 600px;
+ }
+ 
+ .form {
+    grid-column: 1 / 2;
+    display: grid;
+ }
+ 
+ .form_group{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 5%;
+ }
+ 
+ .form_textarea{
+    overflow: auto;
+    resize: vertical;
+    height: 15rem;
+ }
+ 
+ .form_input {
+    font-size: medium;
+    padding: 20px;
+    color: #000000;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid transparent;
+    transition: all .3s;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+ }
+ 
+ .form_input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+ }
+ 
+ .form_label {
+    font-size: medium;
+    font-weight: 700;
+    margin-left: 1%;
+    margin-bottom: .7rem;
+    display: block;
+    transition: all .3s;
+ }
+ 
+ input:placeholder-shown + label { 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem);
+ }
+ 
+ textarea:placeholder-shown + label { 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem);
+ }
+ 
+ .form_btn {
+    justify-self: center;
+    margin: 5rem 0;
+ }
+ 
+ .form_btn button {
+    padding: 1.5rem 10rem;
+    text-transform: none;
+    font-weight: 700;
+    text-align: center;
+ }
+ 
+ .btn--square {
+    border: none;
+    border-radius: 3px;
+    font-size: x-large;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    transition: all .2s;
+ }
+ 
+ /*COMEÇO RODAPÉ*/
+ footer {
+    display: flex;
+    margin-top: 5%;
+    background-color: #D9D9D9;
+    justify-content: center;
+    color: #000000;
+    padding: 10px;
+ }
+ 
+ #rodape {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-between;
+    padding: 10px;
+ }
+ 
+ .col2_rodape {
+    text-align: center;
+ }
+ /*FIM RODAPÉ*/
