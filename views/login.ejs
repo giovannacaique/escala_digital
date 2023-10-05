@@ -1,30 +1,30 @@
 <%- include('./partials/head') %>
-    <%- include('./partials/navbar') %>
 
-        <div class="login-container">
-            <div class="user-image">
-                <img src="./src/img/usuario.png" alt="Usuário">
-                <h2>Escala Digital</h2>
-                <h5>Simplificando o Tempo, Elevando a Qualidade de Vida</h5>
-            </div>
-            <form class="login-form">
-                <input type="text" placeholder="Nome de usuário" required>
-                <input type="password" placeholder="Senha" required>
-                <div class="button-container">
-                    <a href="#">
-                        <button id="entrar" type="submit" class="signup-button"
-                            style="margin-left: 40%;">Entrar</button>
-                    </a>
-                    <div>
-                        <a href="#">
-                            <button class="dir">Cadastrar-se</button>
-                        </a>
-                    </div>
-                </div>
-            </form>
-            <div class="signup-container">
-                <a class="register-link" href="#">Esqueci a Senha</a>
-            </div>
+
+    <a class="voltar" href="/">Voltar</a>
+    <div class="login-container">
+        <div class="user-image">
+            <img src="../img/usuario.png" alt="Usuário">
+            <h2>Escala Digital</h2>
+            <h5>Simplificando o Tempo, Elevando a Qualidade de Vida</h5>
         </div>
+        <form class="login-form">
+            <input type="text" placeholder="Nome de usuário" required>
+            <input type="password" placeholder="Senha" required>
+            <div class="button-container">
+                <a href="#">
+                    <button id="entrar" type="submit" class="signup-button" style="margin-left: 40%;">Entrar</button>
+                </a>
+                <div>
+                    <a href="#">
+                        <button class="dir" href="#">Cadastrar-se</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+        <div class="signup-container">
+            <a class="register-link" href="#">Esqueci a Senha</a>
+        </div>
+    </div>
 
-        <%- include('./partials/footer') %>
+    <%- include('./partials/footer') %>
