@@ -120,8 +120,9 @@ h1 {
    font-weight: 700;
    margin-bottom: 2rem;
 }
-.slogan p{
-   
+
+.slogan p {
+
    text-align: center;
    font-size: 17px;
 }
@@ -373,18 +374,39 @@ footer {
 .col2_rodape {
    text-align: center;
 }
-
 /*FIM RODAPÉ*/
 
-.voltar {
-   margin-top: 2%;
-   margin-left: 2%;
-   background-color: red;
+/*COMEÇO BOTÃO VOLTAR*/
+.voltar{
+   padding: 10px;
+   border-radius: 6px;
+   background-color: #D9D9D9;
+   color: black;
+   transition: background-color 0.3s, color 0.3s;
 }
+
+.btn-back {
+   text-decoration: none;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   position: relative;
+   margin-left: 4%;
+   font-size: 17px;
+   font-weight: bold;
+   display: flex;
+   position: fixed;
+ }
+ 
+ .btn-back:hover .voltar {
+   background-color: #000000;
+   color: #ffff;
+ }
+/*FIM BOTÃO VOLTAR*/
 
 /*COMEÇO LOGIN*/
 .login-container {
-   margin-top: 4%;
+   margin-top: 4.7%;
    background: #D9D9D9;
    display: flex;
    flex-direction: column;
@@ -397,7 +419,7 @@ footer {
    margin-left: 35%;
 }
 
-.user-image img {
+.logo-image img {
    width: 150px;
    height: 150px;
    border-radius: 50%;
