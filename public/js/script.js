@@ -26,3 +26,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+const form = document.getElementById('cadastrarEmpForm');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+
+    fetch('http://localhost:8080/cadastro/empresa', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(data)),
+    })
+        .then(response => response.json())
+        .then(data => {
+            alert('Empresa cadastrada com sucesso!');
+            // Você pode redirecionar o usuário para outra página ou fazer qualquer ação necessária aqui.
+        })
+        .catch(error => {
+            console.error('Erro ao cadastrar empresa:', error);
+        });
+});
