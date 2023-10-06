@@ -33,6 +33,9 @@ app.get("/login", (req, res) => {
     res.render('login');
 });
 
+app.get("/empresa", (req, res) => {
+    res.render('empresa');
+});
   app.listen(8080, () => {
     console.log("Está rodando na porta ${port}");
 });
