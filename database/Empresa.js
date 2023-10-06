@@ -1,17 +1,38 @@
-//Para criar um BD(tabela) sem entrar no MySQL (GITHUB - https://github.com/heliobentzen)
+//Para criar um BD(tabela) sem entrar no MySQL
 const Sequelize = require("sequelize");
 const connection = require("./database");
 
-const Produto = connection
-    .define('produto', {
-        titulo: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        descricao: {
-            type: Sequelize.TEXT,
-            allowNull: false
-        }
-    });
-Produto.sync({force: false});
-module.exports = Produto;
+const Empresa = connection.define('empresa', {
+    id_empresa: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+    },
+    nome_empresa: {
+        type: Sequelize.STRING(40),
+        allowNull: false,
+    },
+    cnpj_cpf: {
+        type: Sequelize.BIGINT.UNSIGNED,
+        unique: true,
+        allowNull: false,
+    },
+    razao_social: {
+        type: Sequelize.STRING(50),
+    },
+    quantidade_funcionarios: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
+    email: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+    },
+    senha: {
+        type: Sequelize.STRING(12),
+        allowNull: false,
+    },
+});
+Empresa.sync({ force: false });
+module.exports = Empresa;
