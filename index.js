@@ -22,13 +22,8 @@ app.use(bodyparser.json());
 //Estou dizendo para o Express usar o EJS como view engine
 app.set('view engine', 'ejs');
 
-
 //Estou definindo a pasta de arquivos estaticos
 app.use(express.static('public'));
-
-app.listen(8080, () => {
-    console.log("Está rodando na porta 8080");
-});
 
 app.get("/", (req, res) => {
     res.render('index');
@@ -36,4 +31,8 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
     res.render('login');
+});
+
+  app.listen(8080, () => {
+    console.log("Está rodando na porta ${port}");
 });
