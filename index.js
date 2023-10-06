@@ -5,7 +5,7 @@ const bodyparser = require("body-parser");
 const connection = require("./database/database");
 
 //Para conectar com o BD criado
-const Produto = require("./database/Produto");
+const Produto = require("./database/Empresa");
 
 connection
     .authenticate()
