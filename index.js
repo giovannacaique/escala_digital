@@ -60,10 +60,37 @@ app.post("/cadastro/empresa", (req, res) => {
         });
 });
 
-
-
 app.get("/cadastro/funcionario", (req, res) => {
     res.render('funcionario');
+});
+
+//Metodo post
+app.post("/cadastro/funcionario", (req, res) => {
+    const { nome_fun, func_status, turno, cpf, rg, cart_trabalho, data_admissao, car_horaria, sexo, nome_empresa, setor, descricao } = req.body;
+    Funcionario.create({
+        nome_fun: nome_fun,
+        func_status: func_status,
+        turno: turno,
+        cpf: cpf,
+        rg: rg,
+        cart_trabalho: cart_trabalho,
+        data_admissao: data_admissao,
+        car_horaria: car_horaria,
+        sexo: sexo,
+        nome_empresa: nome_empresa,
+        setor: setor,
+        descricao: descricao
+    })
+        .then(() => {
+            const successMessage = 'Funcionário cadastrado com sucesso!';
+            console.log(successMessage);
+            res.status(201).json({ message: successMessage, success: true });
+        })
+        .catch((err) => {
+            const errorMessage = 'Erro ao cadastrar funcionário: ' + err.message;
+            console.error(errorMessage);
+            res.status(500).json({ error: errorMessage, success: false });
+        });
 });
 
 app.listen(8080, () => {

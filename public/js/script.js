@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Messagem Success/Error
+// Messagem Success/Error EMPRESA
 const form = document.getElementById('cadastrarEmpForm');
 const messageDiv = document.getElementById('message');
 
@@ -104,3 +104,41 @@ function validarSenhas() {
 // Adicione ouvintes de evento para chamar a função após a entrada do usuário
 senhaInput.addEventListener("input", validarSenhas);
 confirmSenhaInput.addEventListener("input", validarSenhas);
+
+
+// Mensagem de Sucesso/Erro para o Funcionário
+const formFun = document.getElementById('cadastrarFunForm');
+const messageDivFun = document.getElementById('messageFun');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+
+    fetch('/cadastro/funcionario', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(data)),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Se o cadastro for bem-sucedido, exibe uma mensagem de sucesso na div
+            messageDiv.innerHTML = '<div class="success-message">Funcionário cadastrado com sucesso!</div>';
+        } else {
+            // Se o cadastro não for bem-sucedido, exibe uma mensagem de erro na div
+            messageDiv.innerHTML = '<div class="error-message">Erro ao cadastrar funcionário</div>';
+        }
+        // Exibe a div de mensagens
+        messageDiv.style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Erro ao cadastrar funcionário:', error);
+        // Exibe uma mensagem de erro caso ocorra um erro na solicitação
+        messageDiv.innerHTML = '<div class="error-message">Erro ao cadastrar funcionário: Ocorreu um erro no servidor.</div>';
+        // Exibe a div de mensagens
+        messageDiv.style.display = 'block';
+    });
+});
