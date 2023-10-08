@@ -1,8 +1,10 @@
 <%- include('./partials/head') %>
 
-    <a class="btn-back" href="/">
-        <span class="voltar">Voltar</span>
+<div class="botoes">
+    <a class="btns" href="/">
+        <span>Voltar</span>
     </a>
+</div>
 
     <div class="login-container">
         <div class="logo-image">
@@ -12,16 +14,15 @@
         </div>
         <form class="login-form">
             <input type="text" placeholder="Nome de usuário" required>
+
             <input type="password" placeholder="Senha" required>
             <div class="button-container">
                 <a href="#">
                     <button id="entrar" type="submit" class="signup-button" style="margin-left: 40%;">Entrar</button>
                 </a>
                 <div>
-                    <a href="#">
-                        <a href="/cadastro/empresa">
-                            <span class="dir">Cadastrar-se</span>
-                        </a>
+                    <a href="/cadastro/empresa">
+                        <span class="dir">Cadastrar-se</span>
                     </a>
                 </div>
             </div>

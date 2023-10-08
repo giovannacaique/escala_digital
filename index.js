@@ -5,7 +5,7 @@ const bodyparser = require("body-parser");
 const connection = require("./database/database");
 
 //Para conectar com o BD criado
-const Produto = require("./database/Empresa");
+const Empresa = require("./database/Empresa");
 
 connection
     .authenticate()
@@ -37,7 +37,32 @@ app.get("/cadastro/empresa", (req, res) => {
     res.render('empresa');
 });
 
-app.get("/cadastro/empresa/funcionario", (req, res) => {
+//Metodo post
+app.post("/cadastro/empresa", (req, res) => {
+    const { nome_empresa, cnpj_cpf, razao_social, quantidade_funcionarios, email, senha } = req.body;
+    Empresa.create({
+        nome_empresa: nome_empresa,
+        cnpj_cpf: cnpj_cpf,
+        razao_social: razao_social,
+        quantidade_funcionarios: quantidade_funcionarios,
+        email: email,
+        senha: senha
+    })
+        .then(() => {
+            const successMessage = 'Empresa cadastrada com sucesso! Agora cadastre os funcionários.';
+            console.log(successMessage);
+            res.status(201).json({ message: successMessage, success: true });
+        })
+        .catch((err) => {
+            const errorMessage = 'Erro ao cadastrar empresa: ' + err.message;
+            console.error(errorMessage);
+            res.status(500).json({ error: errorMessage, success: false });
+        });
+});
+
+
+
+app.get("/cadastro/funcionario", (req, res) => {
     res.render('funcionario');
 });
 
