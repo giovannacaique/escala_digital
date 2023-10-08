@@ -1,0 +1,148 @@
+/*BODY*/
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: #365B6D;
+}
+
+/*BODY*/
+
+
+/*FUNCIONARIO*/
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+h2 {
+    text-align: center;
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 310%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+/*FUNCIONARIO*/
+
+/*CANCELAR*/
+.cancelar {
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancelar:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.cancelar {
+    margin-top: 30px;
+    background-color: red;
+}
+/*CANCELAR*/
+
+
+/*CADASTRAR*/
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 11px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+.cadastrar {
+    margin-left: 200%;
+}
+/*CADASTRAR*/
+
+
+/*VOLTAR*/
+.btns {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btns:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/*VOLTAR*/
+
+
+/*RODAPÉ*/
+footer {
+    display: flex;
+    margin-top: 5%;
+    background-color: #D9D9D9;
+    justify-content: center;
+    color: #000000;
+    padding: 10px;
+    align-items: end;
+}
+
+#rodape {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.col2_rodape {
+    text-align: center;
+}
+
+/*RODAPÉ*/
