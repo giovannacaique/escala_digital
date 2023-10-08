@@ -1,4 +1,4 @@
-// Primeira parte:
+// Suavidade
 document.addEventListener("DOMContentLoaded", function () {
     // Captura todos os links do menu de navegação.
     const menuLinks = document.querySelectorAll(".menu-content a");
@@ -27,14 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+// Messagem Success/Error
 const form = document.getElementById('cadastrarEmpForm');
+const messageDiv = document.getElementById('message');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const data = new FormData(form);
 
-    fetch('http://localhost:8080/cadastro/empresa', {
+    fetch('/cadastro/empresa', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -43,10 +46,61 @@ form.addEventListener('submit', (event) => {
     })
         .then(response => response.json())
         .then(data => {
-            alert('Empresa cadastrada com sucesso!');
-            // Você pode redirecionar o usuário para outra página ou fazer qualquer ação necessária aqui.
+            if (data.success) {
+                // Se o cadastro for bem-sucedido, exibe uma mensagem de sucesso na div
+                messageDiv.innerHTML = '<div class="success-message">Empresa cadastrada com sucesso! Agora cadastre os funcionários</div>';
+            } else {
+                // Se o cadastro não for bem-sucedido, exibe uma mensagem de erro na div
+                messageDiv.innerHTML = '<div class="error-message">Erro ao cadastrar empresa</div>';
+            }
+            // Exibe a div de mensagens
+            messageDiv.style.display = 'block';
         })
         .catch(error => {
             console.error('Erro ao cadastrar empresa:', error);
+            // Exibe uma mensagem de erro caso ocorra um erro na solicitação
+            messageDiv.innerHTML = '<div class="error-message">Erro ao cadastrar empresa: Ocorreu um erro no servidor.</div>';
+            // Exibe a div de mensagens
+            messageDiv.style.display = 'block';
         });
 });
+
+
+// Variáveis para armazenar os campos de email e confirmar email
+const emailInput = document.getElementById("email");
+const confirmEmailInput = document.getElementById("confirm-email");
+// Função para verificar se os campos "Email" e "Confirmar Email" são iguais
+function validarEmails() {
+    const email = emailInput.value;
+    const confirmEmail = confirmEmailInput.value;
+
+    if (email && confirmEmail) {
+        if (email !== confirmEmail) {
+            alert("Os campos de email e confirmar email não coincidem.");
+            // Você pode limpar os campos ou tomar outra ação, se necessário
+        }
+    }
+}
+// Adicione ouvintes de evento para chamar a função após a entrada do usuário
+emailInput.addEventListener("input", validarEmails);
+confirmEmailInput.addEventListener("input", validarEmails);
+
+
+// Variáveis para armazenar os campos de senha e confirmar senha
+const senhaInput = document.getElementById("senha");
+const confirmSenhaInput = document.getElementById("confirm-senha");
+// Função para verificar se os campos "Senha" e "Confirmar Senha" são iguais
+function validarSenhas() {
+    const senha = senhaInput.value;
+    const confirmSenha = confirmSenhaInput.value;
+
+    if (senha && confirmSenha) {
+        if (senha !== confirmSenha) {
+            alert("Os campos de senha e confirmar senha não coincidem.");
+            // Você pode limpar os campos ou tomar outra ação, se necessário
+        }
+    }
+}
+// Adicione ouvintes de evento para chamar a função após a entrada do usuário
+senhaInput.addEventListener("input", validarSenhas);
+confirmSenhaInput.addEventListener("input", validarSenhas);

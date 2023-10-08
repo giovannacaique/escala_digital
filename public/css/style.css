@@ -323,13 +323,6 @@ h1 {
    display: block;
    transition: all .3s;
 }
-
-input:placeholder-shown+label {
-   opacity: 0;
-   visibility: hidden;
-   transform: translateY(4rem);
-}
-
 textarea:placeholder-shown+label {
    opacity: 0;
    visibility: hidden;
@@ -380,40 +373,12 @@ footer {
 .col2_rodape {
    text-align: center;
 }
+
 /*FIM RODAPÉ*/
-
-/*COMEÇO BOTÃO VOLTAR*/
-.voltar{
-   padding: 10px;
-   border-radius: 6px;
-   background-color: #D9D9D9;
-   color: black;
-   transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-back {
-   text-decoration: none;
-   background-color: transparent;
-   border: none;
-   cursor: pointer;
-   position: relative;
-   margin-left: 4%;
-   font-size: 17px;
-   font-weight: bold;
-   display: flex;
-   position: fixed;
- }
- 
- .btn-back:hover .voltar {
-   background-color: #000000;
-   color: #ffff;
- }
-/*FIM BOTÃO VOLTAR*/
 
 /*COMEÇO LOGIN*/
 .login-container {
    color: #000000;
-   margin-top: 4.7%;
    background: #D9D9D9;
    display: flex;
    flex-direction: column;
@@ -452,13 +417,12 @@ footer {
 .login-form button {
    flex: 1;
    padding: 10px;
-   background-color: #365B6D;
-   color: #ffff;
+   background-color: #000;
+   color: #fff;
    border: none;
    border-radius: 5px;
    cursor: pointer;
    margin-right: 40px;
-   /* Adicione margem para separar os botões */
 }
 
 .signup-button {
@@ -470,50 +434,169 @@ footer {
 }
 
 .signup-button:hover {
-   background-color: black;
-   color: white;
+   background-color: #fff;
+   color: #000;
 }
 
+/* BOTÃO CADASTRAR-SE */
+.dir {
+   font-size: 15px;
+   display: inline-block;
+   padding: 10px;
+   background-color: #000;
+   color: #fff;
+   text-decoration: none;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
 .dir:hover {
-   background-color: black;
-   color: white;
+   background-color: #fff;
+   color: #000;
 }
 /*FIM LOGIN*/
 
 /*COMEÇO EMPRESA*/
+/* Estilos para o container principal */
 .cadastro-container {
-   color: #000000;
-   margin-top: 4.7%;
-   background: #D9D9D9;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   border-radius: 10px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   max-width: 700px;
+   margin: 0 auto;
+   padding: 20px;
    text-align: center;
-   padding: 100px;
-   max-width: 400px;
-   margin-left: 23%;
+   color: #000000;
+   margin-top: 4%;
+   background: #D9D9D9;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   border-radius: 10px;
 }
 
-.esq {
+/* Estilos para o título */
+h1 {
+   font-size: 24px;
+   margin-bottom: 20px;
+}
+
+/* Estilos para os campos de entrada e rótulos */
+label {
+   display: block;
+   margin-bottom: 3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+   width: 100%;
+   padding: 8px;
+   margin-bottom: 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+/* Estilos para os campos à esquerda */
+.left {
    float: left;
-   padding: 2%;
+   width: 45%;
+   margin-right: 5%;
+}
+
+/* Estilos para os campos à direita */
+.right {
+   float: left;
+   width: 45%;
+}
+
+/* Estilos para os botões no centro */
+.buttons {
+   text-align: center;
+   margin-top: 20px;
+}
+
+/* Estilos para o botão "Cadastrar" */
+button {
+   background-color: #000;
+   color: #fff;
+   padding: 11px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 15px;
+}
+
+button:hover {
+   background-color: #fff;
+   color: #000;
+   transition: background-color 0.3s ease;
+}
+/* Estilos para o link parecer um botão */
+.cancelar {
+   font-size: 15px;
+   display: inline-block;
+   padding: 10px;
+   background-color: #000;
+   color: #fff;
+   text-decoration: none;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.cancelar:hover {
+   background-color: #fff;
+   color: #000;
 }
 /*FIM EMPRESA*/
 
-.container {
-   color: #000000;
-   margin-top: 4.7%;
-   background: #D9D9D9;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   border-radius: 10px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-   text-align: center;
-   padding: 20px;
-   height: 200px;
-   max-width: 400px;
-   margin-left: 35%;
+/*COMEÇO INVISIVEL*/
+.none {
+   color: #D9D9D9;
 }
+/*FIM INVISIVEL*/
+
+/*COMEÇO BOTÃO VOLTAR*/
+.btns {
+   margin-left: 20px;
+   margin-top: 20px;
+   font-size: 15px;
+   display: inline-block;
+   padding: 10px;
+   background-color: #000;
+   color: #fff;
+   text-decoration: none;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.btns:hover {
+   background-color: #fff;
+   color: #000;
+}
+/*FIM BOTÃO VOLTAR*/
+
+/*COMEÇO BOTÃO FUNCIONÁRIO*/
+.btn-right {
+   float: right;
+   margin-right: 20px;
+   margin-top: 20px;
+   font-size: 15px;
+   padding: 10px;
+   background-color: #000;
+   color: #fff;
+   text-decoration: none;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+.btn-right:hover {
+   background-color: #fff;
+   color: #000;
+}
+/*FIM BOTÃO FUNCIONÁRIO*/
+
+/*COMEÇO FUNCIONÁRIOS*/
+
+/*FIM FUNCIONÁRIOS*/
