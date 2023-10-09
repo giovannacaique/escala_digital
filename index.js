@@ -37,6 +37,10 @@ app.get("/cadastro/empresa", (req, res) => {
     res.render('empresa');
 });
 
+app.get("/setor", (req, res) => {
+    res.render('telaSetor');
+});
+
 //Metodo post
 app.post("/cadastro/empresa", (req, res) => {
     const { nome_empresa, cnpj_cpf, razao_social, quantidade_funcionarios, email, senha } = req.body;
