@@ -1,8 +1,8 @@
-//localhost:8080
 const express = require("express");
 const app = express();
 const bodyparser = require("body-parser");
 const connection = require("./database/database");
+const bcrypt = require('bcrypt');
 
 //Para conectar com o BD criado
 const Empresa = require("./database/Empresa");
@@ -91,6 +91,20 @@ app.post("/cadastro/funcionario", (req, res) => {
             console.error(errorMessage);
             res.status(500).json({ error: errorMessage, success: false });
         });
+});
+
+app.post('/login', async (req, res) => {
+    const { email, senha } = req.body;
+    const empresa = await Empresa.findOne({ where: { email } });
+    if (!empresa) {
+        return res.status(400).json({ mensagem: 'Email ou Senha incorreto' });
+    }
+
+    const senhaValida = await bcrypt.compare(senha, empresa.senha);
+    if (!senhaValida) {
+        return res.status(400).json({ mensagem: 'Email ou Senha incorreto.' });
+    }
+    res.json({ mensagem: 'Login bem-sucedido'});
 });
 
 app.listen(8080, () => {

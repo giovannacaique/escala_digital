@@ -35,4 +35,10 @@ const Empresa = connection.define('empresa', {
     },
 });
 Empresa.sync({ force: false });
+
+Empresa.beforeCreate(async (empresa) => {
+    const salt = await bcrypt.genSalt(10);
+    empresa.senha = await bcrypt.hash(empresa.senha, salt);
+});
+
 module.exports = Empresa;
