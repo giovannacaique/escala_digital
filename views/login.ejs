@@ -12,10 +12,10 @@
             <h2>Escala Digital</h2>
             <h5>Simplificando o Tempo, Elevando a Qualidade de Vida</h5>
         </div>
-        <form class="login-form">
-            <input type="text" placeholder="Nome de usuário" required>
+        <form class="loginForm" method="post" action="/login">
+            <input id="email" type="email" name="email" placeholder="seu@email.com" required>
 
-            <input type="password" placeholder="Senha" required>
+            <input id="senha" type="password" name="senha" placeholder="Senha" required>
             <div class="button-container">
                 <a href="#">
                     <button id="entrar" type="submit" class="signup-button" style="margin-left: 40%;">Entrar</button>
@@ -32,4 +32,12 @@
         </div>
     </div>
 
-    <%- include('./partials/footer') %>
+    <footer>
+        <div id="rodape">
+            <div class="col2_rodape">
+                &copy; 2023 Desenvolvido Pelos Alunos do Projeto Ninho - Todos direitos Reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../../js/login.js"></script>

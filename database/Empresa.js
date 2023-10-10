@@ -1,4 +1,5 @@
 //Para criar um BD(tabela) sem entrar no MySQL
+const bcrypt = require('bcrypt');
 const Sequelize = require("sequelize");
 const connection = require("./database");
 
@@ -30,9 +31,24 @@ const Empresa = connection.define('empresa', {
         allowNull: false,
     },
     senha: {
-        type: Sequelize.STRING(12),
+        type: Sequelize.STRING,
         allowNull: false,
     },
 });
 Empresa.sync({ force: false });
+
+Empresa.beforeCreate(async (usuario) => {
+    const salt = await bcrypt.genSalt(10);
+    usuario.senha = await bcrypt.hash(usuario.senha, salt);
+});
+
+Empresa.sync()
+    .then(() => {
+        console.log('Tabela criada com sucesso!');
+    })
+    .catch((error) => {
+        console.error('Erro ao criar tabela:', error);
+    });
+
+
 module.exports = Empresa;
