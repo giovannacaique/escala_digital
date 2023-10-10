@@ -64,7 +64,7 @@ app.get("/cadastro/funcionario", (req, res) => {
     res.render('funcionario');
 });
 
-//Metodo post
+/*Metodo post
 app.post("/cadastro/funcionario", (req, res) => {
     const { nome_fun, func_status, turno, cpf, rg, cart_trabalho, data_admissao, car_horaria, sexo, nome_empresa, setor, descricao } = req.body;
     Funcionario.create({
@@ -91,22 +91,38 @@ app.post("/cadastro/funcionario", (req, res) => {
             console.error(errorMessage);
             res.status(500).json({ error: errorMessage, success: false });
         });
-});
+});*/
 
+
+//Autenticação LOGIN
 app.post('/login', async (req, res) => {
     const { email, senha } = req.body;
-    const empresa = await Empresa.findOne({ where: { email } });
-    if (!empresa) {
-        return res.status(400).json({ mensagem: 'Email ou Senha incorreto' });
-    }
+    
+    try {
+        // Procura por um registro no banco de dados com o email fornecido
+        const empresa = await Empresa.findOne({ where: { email } });
 
-    const senhaValida = await bcrypt.compare(senha, empresa.senha);
-    if (!senhaValida) {
-        return res.status(400).json({ mensagem: 'Email ou Senha incorreto.' });
+        if (!empresa) {
+            return res.status(400).json({ mensagem: 'Email ou Senha incorreto' });
+        }
+
+        // Compara a senha fornecida com a senha armazenada no registro
+        const senhaValida = await bcrypt.compare(senha, empresa.senha);
+
+        if (!senhaValida) {
+            return res.status(400).json({ mensagem: 'Email ou Senha incorreto' });
+        }
+
+        // Se chegou até aqui, a autenticação foi bem-sucedida
+        res.json({ mensagem: 'Login bem-sucedido' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ mensagem: 'Erro interno do servidor' });
     }
-    res.json({ mensagem: 'Login bem-sucedido'});
 });
 
+
+//ROTA
 app.listen(8080, () => {
     console.log("Está rodando na porta ${port}");
 });
