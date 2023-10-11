@@ -49,6 +49,7 @@ const Funcionario = connection.define('funcionario', {
         type: Sequelize.STRING(40),
         allowNull: false,
     },
+    /*Chave outra longe setor */
     setor: {
         type: Sequelize.STRING(30),
     },
