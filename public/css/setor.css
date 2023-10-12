@@ -1,9 +1,42 @@
 body{
-    background-color: aliceblue;
+    background-color: #365b6d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-main{
-    background-color: cadetblue;
+header{
+    width: 50%;
+    background-color: ivory;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+h1{
+    font-size: 35px;
+    margin: 0px;
+}
+p{
+    font-size: 25px;
+    margin: 0px;
+}
+#container{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 .tabela{
-    
+    border: solid 5px black;
+    border-radius: 5px;
+    background-color: ivory;
+}
+.tabela th{
+    padding-right: 80px;
+    font-size: 30px;
+}
+.tabela td{
+    padding-right: 80px;
+    font-size: 25px;
+    border: double 3px #031c28;
 }
