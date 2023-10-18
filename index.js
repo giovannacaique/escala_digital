@@ -33,6 +33,12 @@ app.get("/login", (req, res) => {
     res.render('login');
 });
 
+
+app.get("/newLogin", (req, res) => {
+    res.render('new_login');
+});
+
+
 app.get("/cadastro/empresa", (req, res) => {
     res.render('empresa');
 });
