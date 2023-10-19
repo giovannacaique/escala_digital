@@ -1,15 +1,10 @@
 body{
     background-color: #365b6d;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-header{
-    width: 50%;
+.nSetor{
     background-color: ivory;
-    display: flex;
-    align-items: center;
-    align-content: center;
+    display: grid;
+    place-content: center;
 }
 h1{
     font-size: 35px;
@@ -20,10 +15,8 @@ p{
     margin: 0px;
 }
 #container{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     margin-top: 30px;
 }
 .tabela{
@@ -32,7 +25,6 @@ p{
     background-color: ivory;
 }
 .tabela th{
-    padding-right: 80px;
     font-size: 30px;
 }
 .tabela td{
